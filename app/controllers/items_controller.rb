@@ -15,9 +15,26 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to @item
+      redirect_to @item, notice: "Product was successfully created."
     else
       render :new
+    end
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+
+    @item.update(item_params)
+
+    if @item.save
+      redirect_to items_path, notice: "Product was updated."
+
+    else
+      render :edit
     end
   end
 

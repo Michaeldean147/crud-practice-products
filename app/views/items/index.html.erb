@@ -1,4 +1,10 @@
+<% if notice %>
+  <%= notice %>
+<% end %>
+
+
 <h1>Products</h1>
+
 <%= link_to "Create A New Product", new_item_path %>
 
 <table>
@@ -20,7 +26,7 @@
       <% @items.each do |item| %>
         <tr>
           <td>
-            <%= item.name %>
+            <%= link_to "#{item.name}", item %>
           </td>
           <td>
             <%= item.description %>
@@ -33,8 +39,6 @@
           </td>
         </tr>
       <% end %>
-
-
     </tbody>
 
 </table>
