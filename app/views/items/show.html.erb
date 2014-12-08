@@ -11,3 +11,7 @@
 <h1><%= @item.created_at %></h1>
 <br>
 <h1><%= @item.updated_at %></h1>
+
+<%= link_to 'Edit', edit_item_path(@item) %>
+|
+<%= link_to 'Delete', @item, method: :delete, data: {confirm: "Are You Sure?"}%>
