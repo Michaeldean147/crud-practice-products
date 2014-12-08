@@ -17,7 +17,13 @@
         Description
       </th>
       <th>
-        Price>
+        Price
+      </th>
+      <th>
+        Created At
+      </th>
+      <th>
+        Updated At
       </th>
     </tr>
   </thead>
@@ -33,6 +39,12 @@
           </td>
           <td>
             <%= item.price %>
+          </td>
+          <td>
+            <%= item.created_at %>
+          </td>
+          <td>
+            <%= item.updated_at %>
           </td>
           <td>
             <%= link_to 'Edit', edit_item_path(item) %>
